@@ -1,0 +1,8 @@
+.print {
+  width: 100%;
+  color: red;
+  text-align: center;
+  border: 1px solid blue;
+  border-radius: 90px;
+  background-color: yellow;
+  font-family: sans-serif; }
