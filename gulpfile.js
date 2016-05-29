@@ -40,6 +40,11 @@ gulp.task('fonts', function(){
         .pipe(gulp.dest('dist/fonts'))
 });
 
+gulp.task('moveangular', function(){
+  return gulp.src('www/lib/**/*')
+        .pipe(gulp.dest('app/js/lib'))
+});
+
 gulp.task('clean:dist', function(){
   return del.sync('dist');
 });

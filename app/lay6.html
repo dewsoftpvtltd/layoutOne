@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html ng-app="StarterApp">
+<head>
+<title>Layout Two</title>
+<meta name="viewport" content="initial-scale=1, maximum-scale=1" />
+
+<!--build:css css/main.min.css -->
+<link rel="stylesheet" type="text/css" href="css/colors.css">
+<link rel="stylesheet" href="css/angular-material.css">
+
+<!-- endbuild -->
+</head>
+  <body>
+<div layout="row" flex layout-align="space-around center" style="min-height: 100vh;">
+  <div class="yellow" style="padding: 25px; border-radius: 40px;">one</div>
+  <div class="blue" style="padding: 25px; border-radius: 40px;">two</div>
+  <div class="orange" style="padding: 25px; border-radius: 40px;">three</div>
+</div>
+<hr>
+<div layout>
+<div layout="row" layout-margin>
+  <div flex class="blue" >Parent layout and this element have margins.</div>
+</div>
+<div layout="row" layout-padding>
+  <div flex class="yellow" >Parent layout and this element have padding.</div>
+</div>
+<div layout="row" layout-fill style="min-height: 224px;">
+  <div flex class="orange" >Parent layout is set to fill available space.</div>
+</div>
+<div layout="row" layout-padding layout-margin layout-fill style="min-height: 224px;">
+  <div flex class="purple" >I am using all three at once.</div>
+</div>
+</div>
+<hr>
+<div layout="row">
+  <div hide show-gt-sm flex class="yellow">
+    Only show on gt-sm devices.
+  </div>
+  <div hide-gt-sm flex class="purple">
+    Shown on small and medium.<br>
+    Hidden on gt-sm devices.
+  </div>
+  <div show hide-gt-md flex class="blue">
+    Shown on small and medium size devices.<br>
+    Hidden on gt-md devices.
+  </div>
+  <div hide show-md flex class="orange">
+    Shown on medium size devices only.
+  </div>
+  <div hide show-gt-lg flex class="red">
+    Shown on devices larger than 1200px wide only.
+  </div>
+</div>
+
+</body>
+<!--build:js js/main.min.js -->
+
+<script src="js/lib/angular/angular.js"></script>
+<script src="js/lib/angular-animate/angular-animate.js"></script>
+<script src="js/lib/angular-aria/angular-aria.js"></script>
+<script src="js/lib/angular-material/angular-material.js"></script>
+
+<script src="js/app.js"></script>
+<!-- endbuild -->
+</html>

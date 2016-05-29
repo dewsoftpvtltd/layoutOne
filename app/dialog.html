@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Layout Two</title>
+<meta name="viewport" content="initial-scale=1, maximum-scale=1" />
+
+<!--build:css css/main.min.css -->
+<link rel="stylesheet" type="text/css" href="css/print.css">
+<link rel="stylesheet" href="css/angular-material.css">
+
+<!-- endbuild -->
+</head>
+  <body>
+<div ng-app="dialogApp" ng-controller="AppCtrl">
+  <div>
+    <md-button ng-click="showAlert()" class="md-raised md-warn">
+      Employee Alert!
+      </md-button>
+  </div>
+  <div>
+    <md-button ng-click="showDialog($event)" class="md-raised">
+      Custom Dialog
+      </md-button>
+  </div>
+  <div>
+    <md-button ng-click="closeAlert()" ng-disabled="!hasAlert()" class="md-raised">
+      Close Alert
+    </md-button>
+  </div>
+  <div>
+    <md-button ng-click="showGreeting($event)" class="md-raised md-primary">
+      Greet Employee
+      </md-button>
+  </div>
+</div>
+
+
+
+</body>
+<!--build:js js/main.min.js -->
+
+<script src="js/lib/angular/angular.js"></script>
+<script src="js/lib/angular-animate/angular-animate.js"></script>
+<script src="js/lib/angular-aria/angular-aria.js"></script>
+<script src="js/lib/angular-material/angular-material.js"></script>
+
+<script src="js/dialog-app.js"></script>
+<!-- endbuild -->
+</html>
+

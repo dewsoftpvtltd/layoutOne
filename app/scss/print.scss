@@ -1,10 +1,25 @@
-// styles.scss
-.print {
-  width: percentage(11/11);
-  color: red;
-  text-align: center;
-  border: 1px solid blue;
-  border-radius: 90px;
-  background-color: yellow;
-  font-family: sans-serif;
+html {
+  //background-color: #f6f6f6;
+
+
+  body {
+      md-toolbar h1 {
+        font-size: 1.450em;
+        font-weight: 400;
+        margin: auto;
+      }
+      md-item p {
+          margin-top: 0;
+          color: red;
+          padding: 10px;
+          margin:auto;
+        }
+
+
+
+  }
 }
+
+
+
+

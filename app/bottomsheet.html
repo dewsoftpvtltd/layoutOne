@@ -1,0 +1,41 @@
+ <!DOCTYPE html>
+<html>
+<head>
+<title>Layout Two</title>
+<meta name="viewport" content="initial-scale=1, maximum-scale=1" />
+
+<!--build:css css/main.min.css -->
+<link rel="stylesheet" href="css/angular-material.css">
+
+<!-- endbuild -->
+</head>
+  <body ng-app="bottomSheetDemo1">
+    <div ng-controller="BottomSheetExample">
+  <p style="padding-left: 20px;">
+    Bottom sheet can be dismissed with the service or a swipe down.
+  </p>
+  <div class="bottom-sheet-demo inset" layout="column" layout-sm="row" layout-align="center">
+    <md-button class="md-primary" ng-click="showListBottomSheet($event)">
+      Show as List
+    </md-button>
+    <div style="width:50px;"></div>
+    <md-button class="md-primary" ng-click="showGridBottomSheet($event)">
+      Show as Grid
+    </md-button>
+  </div>
+  <br/>
+  <b layout="row" layout-align="center center" layout-margin>
+    {{alert}}
+  </b>
+</div>
+</body>
+<!--build:js js/main.min.js -->
+
+<script src="js/lib/angular/angular.js"></script>
+<script src="js/lib/angular-animate/angular-animate.js"></script>
+<script src="js/lib/angular-aria/angular-aria.js"></script>
+<script src="js/lib/angular-material/angular-material.js"></script>
+
+<script src="js/bottom-app.js"></script>
+<!-- endbuild -->
+</html>

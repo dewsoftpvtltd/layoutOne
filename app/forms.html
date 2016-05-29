@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html ng-app="formApp">
+<head>
+<title>Layout Two</title>
+<meta name="viewport" content="initial-scale=1, maximum-scale=1" />
+
+<!--build:css css/main.min.css -->
+<link rel="stylesheet" type="text/css" href="css/print.css">
+<link rel="stylesheet" href="css/angular-material.css">
+
+<!-- endbuild -->
+</head>
+  <body layout="row" layout-align="center center" style="height: 100vh; background-color: {{favoriteColor}};" ng-controller="formCtrl as vm">
+<form name="colorForm" md-whiteframe="1" layout-padding layout-margin>
+  <md-menu  md-offset="8 9">
+ <!-- Trigger element is a md-button with an icon -->
+ <md-button ng-click="$mdOpenMenu($event)" class="md-icon-button" aria-label="Open sample menu">
+   <md-icon md-svg-icon="images/icons/skoolumLast.svg" ></md-icon>
+ </md-button>
+ <md-menu-content>
+    <md-menu-item> <md-button ng-click="doSomething()" aria-label="skoolum">
+       <md-icon md-menu-align-target md-svg-icon="images/icons/skoolumLast.svg"></md-icon>
+       skoolum
+     </md-button></md-menu-item>
+   <md-menu-item><md-button ng-click="doSomething()">Do Something</md-button></md-menu-item>
+      <md-menu-item><md-button ng-click="doSomething()">Do Something else</md-button></md-menu-item>
+
+   <md-menu-item><md-button ng-click="doSomething()">Do it</md-button></md-menu-item>
+
+   <md-menu-item><md-button ng-click="doSomething()">Do it agian</md-button></md-menu-item>
+
+   <md-menu-item><md-button ng-click="doSomething()">Do to do</md-button></md-menu-item>
+
+ </md-menu-content>
+</md-menu><md-input-container>
+    <label>Favorite Color</label>
+    <input name="favoriteColor" ng-model="favoriteColor" required>
+    <div ng-messages="colorForm.favoriteColor.$error" ng-show="colorForm.favoriteColor.$dirty">
+      <div ng-message="required">This is required!</div>
+    </div>
+
+  </md-input-container>
+  </form>
+  <form name="userForm" layout="column" md-whiteframe="1" layout-padding layout-margin style="min-width: 400px;">
+  <md-input-container>
+    <label>Last Name</label>
+    <input name="lastName" ng-model="lastName" required md-maxlength="10" minlength="4">
+    <div ng-messages="userForm.lastName.$error" ng-show="userForm.lastName.$dirty">
+      <div ng-message="required">This is required!</div>
+      <div ng-message="md-maxlength">That's too long!</div>
+      <div ng-message="minlength">That's too short!</div>
+    </div>
+  </md-input-container>
+  <md-input-container>
+    <label>Biography</label>
+    <textarea name="bio" ng-model="biography" required md-maxlength="150"></textarea>
+    <div ng-messages="userForm.bio.$error" ng-show="userForm.bio.$dirty">
+      <div ng-message="required">This is required!</div>
+      <div ng-message="md-maxlength">That's too long!</div>
+    </div>
+  </md-input-container>
+  <md-input-container>
+   <label>
+    Enter Email</label>
+    <input type="email" ng-model="field" name="myField" required md-maxlength="50" />
+
+  <div ng-messages="userForm.myField.$error" ng-show="userForm.myField.$dirty">
+    <div ng-message="required">Please enter a value for this field.</div>
+    <div ng-message="email">This field must be a valid email address.</div>
+    <div ng-message="md-maxlength">This field can be at most 50 characters long.</div>
+  </div>
+  </md-input-container>
+  <md-input-container>
+    <input placeholder="title" ng-model="title">
+  </md-input-container>
+</form>
+<md-list>
+  <md-list-item class="md-2-line" ng-repeat="item in vm.toDos">
+
+    <md-checkbox ng-model="item.done"></md-checkbox>
+        <div class="md-list-item-text">
+          <h3>{{item.title}}</h3>
+          <p>{{item.description}}</p>
+
+        </div>
+
+  </md-list-item>
+</md-list>
+
+
+</body>
+<!--build:js js/main.min.js -->
+
+<script src="js/lib/angular/angular.js"></script>
+<script src="js/lib/angular-animate/angular-animate.js"></script>
+<script src="js/lib/angular-aria/angular-aria.js"></script>
+<script src="js/lib/angular-messages/angular-messages.js"></script>
+
+<script src="js/lib/angular-material/angular-material.js"></script>
+
+<script src="js/forms.js"></script>
+<!-- endbuild -->
+</html>

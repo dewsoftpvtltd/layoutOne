@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html ng-app="home">
+<head>
+<title>Layout Two</title>
+<meta name="viewport" content="initial-scale=1, maximum-scale=1" />
+
+<!--build:css css/main.min.css -->
+<link rel="stylesheet" type="text/css" href="css/print.css">
+<link rel="stylesheet" href="css/angular-material.css">
+
+<!-- endbuild -->
+</head>
+  <body layout="column">
+
+    <!-- App goes here -->
+    <md-content layout-padding ng-controller="MainCtrl as mainCtrl">
+         <h3 class="md-headline">My Fruits</h3>
+
+        <div layout="row">
+            <div flex="15">
+                <md-button class="md-raised md-primary" ng-click="removeChecked()">Remove</md-button>
+            </div>
+            <div flex="85">
+                <md-input-container>
+                    <label>Search</label>
+                    <input ng-model="searchText">
+                </md-input-container>
+            </div>
+        </div>
+        <div>
+            <md-list>
+                <md-list-item ng-repeat="fruit in fruits | filter:searchText">
+                    <md-checkbox class="md-primary" ng-click="toggleChecked(fruit)"></md-checkbox>{{fruit}}</md-list-item>
+            </md-list>
+        </div>
+    </md-content>
+</div>
+
+<div layout="column">
+  <md-content md-theme="docs-dark" layout-padding layout="row" layout-sm="column">
+    <md-input-container>
+      <label>Title</label>
+      <input ng-model="user.title">
+    </md-input-container>
+    <md-input-container>
+      <label>Email</label>
+      <input ng-model="user.email" type="email">
+    </md-input-container>
+  </md-content>
+  <md-content layout-padding>
+    <form name="userForm">
+      <div layout layout-sm="column">
+        <md-input-container style="width:80%">
+            <label>Company (Disabled)</label>
+            <input ng-model="user.company" disabled>
+          </md-input-container>
+        <md-input-container flex>
+          <label>Submission Date</label>
+          <input type="date" ng-model="user.submissionDate">
+        </md-input-container>
+      </div>
+      <div layout layout-sm="column">
+        <md-input-container flex>
+          <label>First Name</label>
+          <input ng-model="user.firstName" placeholder="Placeholder text">
+        </md-input-container>
+        <md-input-container flex>
+          <label>Last Name</label>
+          <input ng-model="theMax">
+        </md-input-container>
+      </div>
+      <md-input-container flex>
+        <label>Address</label>
+        <input ng-model="user.address">
+      </md-input-container>
+      <div layout layout-sm="column">
+        <md-input-container flex>
+          <label>City</label>
+          <input ng-model="user.city">
+        </md-input-container>
+        <md-input-container flex>
+          <label>State</label>
+          <input ng-model="user.state">
+        </md-input-container>
+        <md-input-container flex>
+          <label>Postal Code</label>
+          <input ng-model="user.postalCode">
+        </md-input-container>
+      </div>
+      <md-input-container flex>
+        <label>Biography</label>
+        <textarea ng-model="user.biography" columns="1" md-maxlength="150"></textarea>
+      </md-input-container>
+    </form>
+  </md-content>
+</div>
+
+</body>
+<!--build:js js/main.min.js -->
+
+<script src="js/lib/angular/angular.js"></script>
+<script src="js/lib/angular-animate/angular-animate.js"></script>
+<script src="js/lib/angular-aria/angular-aria.js"></script>
+<script src="js/lib/angular-material/angular-material.js"></script>
+
+<script src="js/fruits.js"></script>
+<!-- endbuild -->
+</html>

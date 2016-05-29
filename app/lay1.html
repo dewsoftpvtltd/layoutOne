@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html ng-app="colorApp">
+<head>
+<title>Layout Two</title>
+<meta name="viewport" content="initial-scale=1, maximum-scale=1" />
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+<!--build:css css/main.min.css -->
+<link rel="stylesheet" type="text/css" href="css/colors.css">
+<link rel="stylesheet" href="css/angular-material.css">
+
+<!-- endbuild -->
+</head>
+  <body layout ng-controller="genderCtrl as ctrl" flex md-theme="{{theme}}" md-theme-watch>
+
+<div layout="row">
+
+  <div flex >
+<md-button class="md-raised" ng-click="setTheme()">Change Theme</md-button>
+ <md-button class="md-fab md-raised" hide-xs aria-label="Eat cake">
+  <md-icon aria-label="Cake" class="material-icons">menu</md-icon>
+</md-button>
+<md-button class="md-fab md-mini md-raised" hide-gt-xs aria-label="Eat cake">
+  <md-icon aria-label="Cake" class="material-icons">menu</md-icon>
+</md-button>
+</div>
+  <div flex class="yellow">
+  <md-button class="md-fab" hide-xs aria-label="Eat cake">
+  <md-icon aria-label="Cake" class="material-icons">cake</md-icon>
+</md-button>
+  <md-button class="md-fab md-mini"  hide-gt-xs  aria-label="Eat cake">
+  <md-icon aria-label="Cake" class="material-icons">cake</md-icon>
+</md-button></div>
+
+</div>
+
+<div layout="column" flex>
+  <div flex class="orange">
+  <md-button class="md-fab md-primary" aria-label="Eat cake">
+  <md-icon md-svg-src="images/icons/books.svg"></md-icon>
+</md-button>
+
+</div>
+  <div flex>
+<section layout="row" layout-sm="column" layout-align="center center">
+  <md-button class="groupX left">Students</md-button>
+  <md-button class="groupX middle">Teachers</md-button>
+  <md-button class="groupX middle">Parents</md-button>
+  <md-button class="groupX right">Schools</md-button>
+</section>
+<section layout="column">
+  </md-button><md-button class="md-icon-button md-primary" aria-label="Settings">
+        <md-icon md-svg-icon="images/icons/badge.svg"></md-icon>
+</md-button>
+<md-button class="md-icon-button md-primary" aria-label="Settings">
+        <md-icon md-svg-icon="images/icons/class.svg"></md-icon>
+</md-button>
+<md-button class="md-icon-button md-primary" aria-label="Settings">
+        <md-icon md-svg-icon="images/icons/school-building.svg"></md-icon>
+</md-button>
+<md-checkbox class="green dotted">
+   Green Checkbox
+</md-checkbox>
+</section>
+
+
+<section>
+<md-button class="md-primary md-hue-1">Click me</md-button>
+<md-button class="md-accent">or maybe me</md-button>
+<md-button class="md-warn">Careful</md-button>
+<md-button class="md-primary">Click me</md-button>
+<md-button class="md-primary md-hue-1">Click me</md-button>
+<md-button class="md-primary md-hue-2">Click me</md-button>
+<md-button class="md-raised">Apply Admission</md-button>
+</section>
+
+</div>
+
+
+
+</body>
+<!--build:js js/main.min.js -->
+
+<script src="js/lib/angular/angular.js"></script>
+<script src="js/lib/angular-animate/angular-animate.js"></script>
+<script src="js/lib/angular-aria/angular-aria.js"></script>
+<script src="js/lib/angular-material/angular-material.js"></script>
+
+<script src="js/colorApp.js"></script>
+<!-- endbuild -->
+</html>

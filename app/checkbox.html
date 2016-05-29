@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html ng-app="chipsApp">
+<head>
+<title>Layout Two</title>
+<meta name="viewport" content="initial-scale=1, maximum-scale=1" />
+
+<!--build:css css/main.min.css -->
+<link rel="stylesheet" type="text/css" href="css/print.css">
+<link rel="stylesheet" href="css/angular-material.css">
+
+<!-- endbuild -->
+</head>
+  <body ng-controller="chipCtrl as ctrl">
+  <md-content layout-padding>
+    Lorem ipsum dolor sit amet, ne quod novum mei.    Lorem ipsum dolor sit amet, ne quod novum mei.
+    Lorem ipsum dolor sit amet, ne quod novum mei.
+    Lorem ipsum dolor sit amet, ne quod novum mei.
+    Lorem ipsum dolor sit amet, ne quod novum mei.
+    Lorem ipsum dolor sit amet, ne quod novum mei.
+    Lorem ipsum dolor sit amet, ne quod novum mei.
+    Lorem ipsum dolor sit amet, ne quod novum mei.
+    Lorem ipsum dolor sit amet, ne quod novum mei.
+<md-datepicker ng-model="birthday"></md-datepicker>
+<md-fab><md-fab-speed-dial md-direction="left" class="md-scale md-fab-top-right">
+  <md-fab-trigger>
+    <md-button class="md-primary md-fab" aria-label="Add..."><md-icon md-svg-src="images/icons/medal.svg"></md-icon></md-button>
+  </md-fab-trigger>
+  <md-fab-actions>
+    <md-button class="md-accent md-fab" aria-label="Add User">
+      <md-icon md-svg-src="images/icons/medal.svg"></md-icon>
+    </md-button>
+    <md-button class="md-warn md-fab" aria-label="Add Group">
+      <md-icon md-svg-src="images/icons/medal.svg"></md-icon>
+    </md-button>
+    <md-button class="md-accent md-fab" aria-label="Add User">
+      <md-icon md-svg-src="images/icons/medal.svg"></md-icon>
+    </md-button>
+    <md-button class="md-warn md-fab" aria-label="Add Group">
+      <md-icon md-svg-src="images/icons/medal.svg"></md-icon>
+    </md-button>
+    <md-button class="md-accent md-fab" aria-label="Add User">
+      <md-icon md-svg-src="images/icons/medal.svg"></md-icon>
+    </md-button>
+    <md-button class="md-warn md-fab" aria-label="Add Group">
+      <md-icon md-svg-src="images/icons/medal.svg"></md-icon>
+    </md-button>
+    <md-button class="md-accent md-fab" aria-label="Add User">
+      <md-icon md-svg-src="images/icons/medal.svg"></md-icon>
+    </md-button>
+    <md-button class="md-warn md-fab" aria-label="Add Group">
+      <md-icon md-svg-src="images/icons/medal.svg"></md-icon>
+    </md-button>
+  </md-fab-actions>
+</md-fab-speed-dial>
+</md-fab>
+</md-content>
+<md-divider></md-divider>
+
+<md-content layout="column" class="md-padding">
+<md-checkbox ng-model="isChecked" aria-label="Finished?">
+  Finished ?
+</md-checkbox>
+<md-divider md-inset></md-divider>
+<md-checkbox md-no-ink ng-model="hasInk" aria-label="No Ink Effects">
+  No Ink Effects
+</md-checkbox>
+<md-checkbox ng-disabled="true" ng-model="isDisabled" aria-label="Disabled">
+  Disabled
+</md-checkbox>
+
+
+</md-content>
+<md-chips ng-model="myItems" placeholder="Add an item" readonly="isReadOnly">
+
+<md-chip>{{$chip}}</md-chip><button md-chip-remove>DEL</button>
+<md-chip>{{$chip}}</md-chip>
+<md-chip>{{$chip}}</md-chip>
+</md-chips>
+<form name="userForm">
+  <md-chips name="fruits" ng-model="myItems" placeholder="Add an item" md-max-chips="5">
+  </md-chips>
+  <div ng-messages="userForm.fruits.$error" ng-if="userForm.$dirty">
+    <div ng-message="md-max-chips">You reached the maximum amount of chips</div>
+ </div>
+</form>
+<md-fab><md-fab-toolbar md-direction="left" class="md-fab-bottom-right">
+  <md-fab-trigger>
+    <md-button aria-label="Add..."><md-icon md-svg-src="images/icons/medal.svg"></md-icon></md-button>
+  </md-fab-trigger>
+  <md-fab-actions>
+    <md-button aria-label="Add User" class="md-primary md-fab">
+      <md-icon md-svg-src="images/icons/badge.svg"></md-icon>
+    </md-button>
+    <md-button aria-label="Add Group" class="md-primary md-fab">
+      <md-icon md-svg-src="images/icons/party.svg"></md-icon>
+    </md-button>
+  </md-fab-actions>
+</md-fab-toolbar></md-fab>
+<md-contact-chips ng-model="ctrl.contacts" md-contacts="ctrl.querySearch($query)" md-contact-name="name" md-contact-image="image" md-contact-email="email" placeholder="To">
+</md-contact-chips>
+</body>
+<!--build:js js/main.min.js -->
+
+<script src="js/lib/angular/angular.js"></script>
+<script src="js/lib/angular-animate/angular-animate.js"></script>
+<script src="js/lib/angular-aria/angular-aria.js"></script>
+<script src="js/lib/angular-material/angular-material.js"></script>
+
+<script src="js/chips.js"></script>
+<!-- endbuild -->
+</html>

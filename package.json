@@ -8,7 +8,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/dewsoftpvtltd/layoutOne.git"
+    "url": "git+https://github.com/dewsoftpvtltd/layoutTwo.git"
   },
   "keywords": [
     "angular",
@@ -17,9 +17,9 @@
   "author": "Abdul Basit <basitlangrial@gmail.com>",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/dewsoftpvtltd/layoutOne/issues"
+    "url": "https://github.com/dewsoftpvtltd/layoutTwo/issues"
   },
-  "homepage": "https://github.com/dewsoftpvtltd/layoutOne#readme",
+  "homepage": "https://github.com/dewsoftpvtltd/layoutTwo#readme",
   "devDependencies": {
     "browser-sync": "^2.12.8",
     "del": "^2.2.0",

@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Theme Switcher Two</title>
+<meta name="viewport" content="initial-scale=1, maximum-scale=1" />
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+<!--build:css css/main.min.css -->
+<link rel="stylesheet" type="text/css" href="css/colors.css">
+<link rel="stylesheet" href="css/angular-material.css">
+
+<!-- endbuild -->
+</head>
+  <body>
+
+ <div ng-controller="AppCtrl" ng-cloak="" class="toolbardemoBasicUsage" ng-app="myThemeSwitcher">
+
+  <md-content md-theme="{{selectedTheme}}">
+
+    <md-toolbar class="md-accent">
+      <div class="md-toolbar-tools">
+        <md-button class="md-icon-button" aria-label="Settings">
+          <md-icon md-svg-icon="images/icons/books.svg"></md-icon>
+        </md-button>
+        <h2>
+          <span>Dynamic Theme Animation</span>
+        </h2>
+        <span flex=""></span>
+        <md-button class="md-icon-button" aria-label="Favorite">
+          <md-icon md-svg-icon="images/icons/school-building.svg" style="color: greenyellow;"></md-icon>
+        </md-button>
+        <md-button class="md-icon-button" aria-label="More">
+          <md-icon md-svg-icon="images/icons/cake.svg"></md-icon>
+        </md-button>
+      </div>
+    </md-toolbar>
+
+    <br />
+
+    <div layout="column" layout-gt-xs="row" layout-padding>
+
+      <div flex layout="column">
+        <h3>Examples</h3>
+
+        <h4>Buttons</h4>
+
+        <div>
+          <md-button class="md-raised md-primary">Test</md-button>
+          <md-button class="md-raised md-accent">Test</md-button>
+          <md-button class="md-raised md-warn">Test</md-button>
+        </div>
+
+        <h4>Checkboxes</h4>
+
+        <div layout="column">
+          <md-checkbox>Checkbox 1</md-checkbox>
+          <md-checkbox>Checkbox 2</md-checkbox>
+        </div>
+      </div>
+
+      <div flex layout="column">
+        <h3>Theme Switcher</h3>
+        <md-input-container>
+          <label>Select a Theme</label>
+          <md-select ng-model="selectedTheme">
+            <md-option value="default">Red</md-option>
+            <md-option value="topher">Purple</md-option>
+          </md-select>
+        </md-input-container>
+        <md-button class='md-primary' ng-click="showListBottomSheet($event)">
+    Open a Bottom Sheet!
+  </md-button>
+      </div>
+
+  </div>
+
+
+  </md-content>
+</div>
+
+
+</body>
+<!--build:js js/main.min.js -->
+
+<script src="js/lib/angular/angular.js"></script>
+<script src="js/lib/angular-animate/angular-animate.js"></script>
+<script src="js/lib/angular-aria/angular-aria.js"></script>
+<script src="js/lib/angular-material/angular-material.js"></script>
+
+<script src="js/themeSwitcher.js"></script>
+<!-- endbuild -->
+</html>

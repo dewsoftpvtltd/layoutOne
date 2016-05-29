@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html ng-app="AutoFocusApp">
+<head>
+<title>Layout Two</title>
+<meta name="viewport" content="initial-scale=1, maximum-scale=1" />
+
+<!--build:css css/main.min.css -->
+<link rel="stylesheet" type="text/css" href="css/print.css">
+<link rel="stylesheet" href="css/angular-material.css">
+
+<!-- endbuild -->
+</head>
+  <body layout="column">
+
+
+ <div ng-controller="myCtrl">
+    <md-button ng-click="showDialog($event)" class="md-raised">
+      Custom Dialog
+      </md-button>
+
+<md-button> Flat Button </md-button>
+<md-button href="http://google.com"> Flat link </md-button>
+<md-button class="md-raised"> Raised Button </md-button>
+<md-button ng-disabled="true"> Disabled Button </md-button>
+<md-button>
+  <md-icon md-svg-src="images/icons/badge.svg"></md-icon>
+  Register Now
+</md-button> </div><hr>
+</body>
+<!--build:js js/main.min.js -->
+
+<script src="js/lib/angular/angular.js"></script>
+<script src="js/lib/angular-animate/angular-animate.js"></script>
+<script src="js/lib/angular-aria/angular-aria.js"></script>
+<script src="js/lib/angular-material/angular-material.js"></script>
+
+<script src="js/auto-focus.js"></script>
+<!-- endbuild -->
+</html>

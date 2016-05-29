@@ -1,0 +1,25 @@
+{
+  "name": "material-layout",
+  "description": "A layout for angular material",
+  "main": "index.js",
+  "authors": [
+    "Abdul Basit <basitlangrial@gmail.com>"
+  ],
+  "license": "MIT",
+  "keywords": [
+    "angular",
+    "material"
+  ],
+  "homepage": "https://github.com/dewsoftpvtltd/layoutOne",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "www/lib",
+    "test",
+    "tests"
+  ],
+  "devDependencies": {
+    "angular-material": "^1.0.9"
+  }
+}

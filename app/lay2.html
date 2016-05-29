@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html ng-app="StarterApp">
+<head>
+<title>Layout Two</title>
+<meta name="viewport" content="initial-scale=1, maximum-scale=1" />
+
+<!--build:css css/main.min.css -->
+<link rel="stylesheet" type="text/css" href="css/colors.css">
+<link rel="stylesheet" href="css/angular-material.css">
+
+<!-- endbuild -->
+</head>
+  <body layout="row"  layout-xs="column">
+
+
+<div layout="row" flex   layout-xs="column">
+  <div flex class="red">First item in row</div>
+  <div flex class="grey">Second item in row</div>
+</div>
+<div layout="column" flex>
+  <div flex class="orange">First item in column</div>
+  <div flex>Second item in column</div>
+</div>
+
+</body>
+<!--build:js js/main.min.js -->
+
+<script src="js/lib/angular/angular.js"></script>
+<script src="js/lib/angular-animate/angular-animate.js"></script>
+<script src="js/lib/angular-aria/angular-aria.js"></script>
+<script src="js/lib/angular-material/angular-material.js"></script>
+
+<script src="js/app.js"></script>
+<!-- endbuild -->
+</html>
