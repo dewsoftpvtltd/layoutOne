@@ -1,0 +1,69 @@
+<html lang="en" ng-app="StarterApp">
+  <head>
+    <!--build:css css/main.min.css -->
+<link rel="stylesheet" type="text/css" href="css/print.css">
+<link rel="stylesheet" href="css/angular-material.css">
+
+<!-- endbuild -->
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1" />
+  </head>
+  <body ng-controller="AppCtrl">
+    <md-toolbar>
+      <h2 class="md-toolbar-tools md-toolbar-tools-bottom">
+        <md-button class="md-fab md-button md-fab-top-right">Save</md-button>
+      </h2>
+    </md-toolbar>
+    <md-content class="md-padding">
+      <h1>Angular Material Sandbox</h1>
+      <h2>mdDialog</h2>
+      <md-button class="md-raised" ng-click="openDialog($event)">dialog</md-button>
+      <h2>mdSelect</h2>
+      <md-select placeholder="Pick" ng-model="someVal">
+        <md-option value="1">One</md-option>
+        <md-option value="2">Two</md-option>
+      </md-select>
+      <md-select multiple="true" placeholder="Type d'établissement" ng-model="someVal">
+        <md-option>Ecole d'ingénieur</md-option>
+        <md-option>Ecole de commerce</md-option>
+        <md-option>Ecole spécialisée</md-option>
+        <md-option>Université</md-option>
+      </md-select>
+      <h2>mdFAB</h2>
+      <md-button class="md-fab" aria-label="Eat cake" ng-href="#">
+            <!--<md-icon md-svg-src="img/icons/cake.svg"></md-icon>-->
+            X
+      </md-button>
+
+      <md-button class="md-fab" aria-label="Use Android">
+        <!--<md-icon md-svg-src="img/icons/android.svg"></md-icon>-->
+        X
+      </md-button>
+      <h2>mdCheckbox</h2>
+      <md-checkbox ng-model="true">1</md-checkbox>
+      <md-checkbox ng-model="false">2</md-checkbox>
+      <md-checkbox ng-model="true" ng-disabled="true">3</md-checkbox>
+
+      <h2>mdSwitch</h2>
+      <md-switch ng-model="true">1</md-switch>
+      <md-switch ng-model="false">2</md-switch>
+      <md-switch ng-model="true" ng-disabled="true">3</md-switch>
+
+      <h2>mdRadioButton</h2>
+      <md-radio-group ng-model="true">
+        <md-radio-button>1</md-radio-button>
+        <md-radio-button>2</md-radio-button>
+        <md-radio-button ng-disabled="true">3</md-radio-button>
+      </md-radio-group>
+    </md-content>
+   <!--build:js js/main.min.js -->
+
+<script src="js/lib/angular/angular.js"></script>
+<script src="js/lib/angular-animate/angular-animate.js"></script>
+<script src="js/lib/angular-aria/angular-aria.js"></script>
+<script src="js/lib/angular-material/angular-material.js"></script>
+<script src="js/app.js"></script>
+<!-- endbuild -->
+    <script src="js/app.js"></script>
+
+  </body>
+</html>
