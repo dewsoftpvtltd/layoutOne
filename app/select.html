@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html ng-app="selectApp">
+<head>
+<title>Layout Two</title>
+<meta name="viewport" content="initial-scale=1, maximum-scale=1" />
+
+<!--build:css css/main.min.css -->
+<link rel="stylesheet" type="text/css" href="css/print.css">
+<link rel="stylesheet" href="css/angular-material.css">
+
+<!-- endbuild -->
+</head>
+  <body layout="column" layout-align="center center" ng-controller="AreaCtrl as vm">
+  <md-subheader>Online Friends</md-subheader>
+
+<div><h1>{{selectedUser.name}} is living in {{area}} where the temperature is {{myDiscreteValue}} degree centigrage.</h1>
+<div ng-show="isActive"> And do you know, {{selectedUser.name}} has finished the work.</div></div>
+<md-input-container>
+  <md-select ng-model="area">
+    <md-select-header>
+      <span> Neighborhoods - </span>
+    </md-select-header>
+    <md-option ng-value="opt" ng-repeat="opt in opts">{{ opt }}</md-option>
+  </md-select>
+</md-input-container>
+<div>
+  <md-select ng-model="selectedUser" ng-model-options="{trackBy: '$value.id'}">
+    <md-option ng-value="user" ng-repeat="user in users">{{ user.name }}</md-option>
+  </md-select>
+  <md-input-container>
+  <label>Auto Select</label>
+  <input type="text" md-select-on-focus>
+</md-input-container>
+<md-input-container>
+  <label>Auto Select</label>
+  <textarea md-select-on-focus>This text will be selected on focus.</textarea>
+</md-input-container>
+{{isActive}}
+<div md-swipe-down="onSwipDown()">Swipe me down!
+<md-switch ng-model="isActive" aria-label="Finished?">
+  Finished ?
+</md-switch>
+<md-switch md-no-ink ng-model="hasInk" aria-label="No Ink Effects">
+  No Ink Effects
+</md-switch>
+<md-switch ng-disabled="true" ng-model="isDisabled" aria-label="Disabled">
+  Disabled
+</md-switch></div>
+
+<div layout="row">
+
+
+  <md-sidenav md-component-id="left" class="md-sidenav-left">
+    Left Nav!
+  </md-sidenav>
+  <md-content>
+    Center Content
+    <md-button ng-click="openLeftMenu()">
+      Open Left Menu
+    </md-button>
+  </md-content>
+  <md-sidenav md-component-id="right" md-is-locked-open="$mdMedia('max-width: 333px')" class="md-sidenav-right">
+    <form>
+      <md-input-container>
+        <label for="testInput">Test input</label>
+        <input id="testInput" type="text" ng-model="data" md-autofocus>
+      </md-input-container>
+    </form>
+  </md-sidenav>
+
+</div>
+ <div> <md-slider md-discrete ng-model="myDiscreteValue" step="10" min="10" max="100">
+</md-slider></div>
+</div>
+</body>
+<!--build:js js/main.min.js -->
+
+<script src="js/lib/angular/angular.js"></script>
+<script src="js/lib/angular-animate/angular-animate.js"></script>
+<script src="js/lib/angular-aria/angular-aria.js"></script>
+<script src="js/lib/angular-messages/angular-messages.js"></script>
+
+<script src="js/lib/angular-material/angular-material.js"></script>
+
+<script src="js/select.js"></script>
+<!-- endbuild -->
+</html>

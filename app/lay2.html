@@ -10,18 +10,25 @@
 
 <!-- endbuild -->
 </head>
-  <body layout="row"  layout-xs="column">
-
-
+  <body>
+<md-toolbar>
+    <div class="md-toolbar-tools">
+      <span>Tabs App</span>
+      <!-- fill up the space between left and right area -->
+      <span flex></span>
+      <md-button>
+        Register
+      </md-button>
+    </div>
+  </md-toolbar>
+<div class="container" flex layout="row"  layout-xs="column">
 <div layout="row" flex   layout-xs="column">
   <div flex class="red">First item in row</div>
   <div flex class="grey">Second item in row</div>
-</div>
-<div layout="column" flex>
-  <div flex class="orange">First item in column</div>
-  <div flex>Second item in column</div>
+  <div flex class="orange">Third item in row</div>
 </div>
 
+</div>
 </body>
 <!--build:js js/main.min.js -->
 
