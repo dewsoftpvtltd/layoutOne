@@ -8,6 +8,7 @@ function formCtrl(){
   this.toDos = [
   {title: "cook", description: "cooking", done: false},
   {title: "clean", description: "cleaning", done: false},
-  {title: "rise and shine", description: "rising and shining", done: false}
+  {title: "rise and shine", description: "rising and shining", done: false},
+  {title: "Excel", description: "Be the best", done: false}
    ];
 }

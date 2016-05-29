@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html ng-app="menuBarApp">
+<head>
+<title>Layout Two</title>
+<meta name="viewport" content="initial-scale=1, maximum-scale=1" />
+
+<!--build:css css/main.min.css -->
+<link rel="stylesheet" type="text/css" href="css/print.css">
+<link rel="stylesheet" href="css/angular-material.css">
+
+<!-- endbuild -->
+</head>
+  <body layout="column" ng-controller="MenuCtrl as ctrl" style="background-color: {{selected}};">
+<md-menu-bar>
+  <md-menu>
+    <button ng-click="$mdOpenMenu()">
+      File
+    </button>
+    <md-menu-content>
+      <md-menu-item>
+        <md-button ng-click="ctrl.sampleAction('share', $event)">
+          Share...
+        </md-button>
+      </md-menu-item>
+      <md-menu-divider></md-menu-divider>
+      <md-menu-item>
+      <md-menu-item>
+        <md-menu>
+          <md-button ng-click="$mdOpenMenu()">New</md-button>
+          <md-menu-content>
+            <md-menu-item><md-button ng-click="ctrl.sampleAction('New Document', $event)">Document</md-button></md-menu-item>
+            <md-menu-item><md-button ng-click="ctrl.sampleAction('New Spreadsheet', $event)">Spreadsheet</md-button></md-menu-item>
+            <md-menu-item><md-button ng-click="ctrl.sampleAction('New Presentation', $event)">Presentation</md-button></md-menu-item>
+            <md-menu-item><md-button ng-click="ctrl.sampleAction('New Form', $event)">Form</md-button></md-menu-item>
+            <md-menu-item><md-button ng-click="ctrl.sampleAction('New Drawing', $event)">Drawing</md-button></md-menu-item>
+          </md-menu-content>
+        </md-menu>
+      </md-menu-item>
+    </md-menu-item></md-menu-content>
+  </md-menu>
+</md-menu-bar>
+
+<md-menu-bar>
+ <md-menu>
+   <button ng-click="$mdOpenMenu()">
+     Sample Menu
+   </button>
+   <md-menu-content>
+     <md-menu-item type="checkbox" ng-model="settings.allowChanges">Allow changes</md-menu-item>
+     <md-menu-divider></md-menu-divider>
+     <md-menu-item type="radio" ng-model="settings.mode" ng-value="1">Mode 1</md-menu-item>
+     <md-menu-item type="radio" ng-model="settings.mode" ng-value="1">Mode 2</md-menu-item>
+     <md-menu-item type="radio" ng-model="settings.mode" ng-value="1">Mode 3</md-menu-item>
+
+   </md-menu-content>
+ </md-menu>
+</md-menu-bar>
+<md-progress-linear md-mode="determinate" value="54"></md-progress-linear>
+<md-progress-linear md-mode="determinate" ng-value="54"></md-progress-linear>
+<md-progress-circular md-mode="determinate" value="32"></md-progress-circular>
+<md-progress-circular md-mode="determinate" ng-value="23"></md-progress-circular>
+<md-progress-circular md-mode="determinate" value="77" md-diameter="100"></md-progress-circular>
+<md-progress-linear md-mode="indeterminate"></md-progress-linear>
+<md-progress-circular md-mode="indeterminate"></md-progress-circular>
+
+
+<md-progress-linear md-mode="buffer" value="54" md-buffer-value="54"></md-progress-linear>
+<md-progress-linear md-mode="query"></md-progress-linear>
+
+<md-radio-group>
+  <md-radio-button value="1" aria-label="Label 1">
+  Label 1
+</md-radio-button>
+<md-radio-button ng-model="color" ng-value="specialValue" aria-label="Green">
+  Green
+</md-radio-button>
+</md-radio-group>
+<md-radio-group ng-model="selected">
+  <md-radio-button ng-repeat="d in colorOptions" ng-value="d.value" aria-label="{{ d.label }}">
+         {{ d.label }}
+  </md-radio-button>
+</md-radio-group>
+</body>
+<!--build:js js/main.min.js -->
+
+<script src="js/lib/angular/angular.js"></script>
+<script src="js/lib/angular-animate/angular-animate.js"></script>
+<script src="js/lib/angular-aria/angular-aria.js"></script>
+<script src="js/lib/angular-messages/angular-messages.js"></script>
+
+<script src="js/lib/angular-material/angular-material.js"></script>
+
+<script src="js/menubar.js"></script>
+<!-- endbuild -->
+</html>

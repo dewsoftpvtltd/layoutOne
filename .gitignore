@@ -5,6 +5,8 @@ app/js/lib
 # Laravel 4 specific
 bootstrap/compiled.php
 app/storage/
+www/lib
+www/lib/material-design-icons/
 
 # Laravel 5 & Lumen specific
 bootstrap/cache/
