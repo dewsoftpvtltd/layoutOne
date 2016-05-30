@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html ng-app="todoApp">
+<head>
+<title>Layout Two</title>
+<meta name="viewport" content="initial-scale=1, maximum-scale=1" />
+
+<!--build:css css/main.min.css -->
+<link rel="stylesheet" type="text/css" href="css/todo.css">
+<link rel="stylesheet" href="css/angular-material.css">
+
+<!-- endbuild -->
+</head>
+  <body layout="column" layout-fill>
+<md-toolbar>
+    <div class="md-toolbar-tools">
+      <span>Todo App</span>
+      <!-- fill up the space between left and right area -->
+      <span flex></span>
+      <md-button>
+        Register
+      </md-button>
+    </div>
+  </md-toolbar>
+
+    <div ng-controller="TodoListController as todoList" layout-gt-xs="row" layout-xs="column" layout-align="center center">
+    <div layout="row" layout-align="start start" layout-gt-xs="row" layout-xs="column" >
+  <div md-whiteframe="1" layout-margin>
+      <form ng-submit="todoList.addTodo()">
+       <md-input-container>
+        <input type="text" ng-model="todoList.todoText"  size="30"
+               placeholder="Add new todo here">
+        <md-button type="submit" value="add" class="md-raised md-accent">Add</md-button>
+        </md-input-container>
+      </form></div>
+    <div>
+      <md-list md-whiteframe="1"><div layout layout-align="end end">
+     <span flex="85" layout-padding><small>{{todoList.remaining()}} of {{todoList.todos.length}} remaining</small></span> <md-icon md-svg-src="images/icons/archive.svg" ng-click="todoList.archive()"><md-tooltip>
+    Archive todo
+  </md-tooltip></md-icon></div>
+          <md-list-item class="md-2-line" ng-repeat="todo in todoList.todos" >
+            <md-checkbox ng-model="todo.done"></md-checkbox>
+            <div class="md-list-item-text done-{{todo.done}}">
+              <h3>{{todo.text}}</h3>
+            </div>
+          </md-list-item>
+        </md-list>
+        </div>
+      </div>
+    </div>
+
+</body>
+<!--build:js js/main.min.js -->
+
+<script src="js/lib/angular/angular.js"></script>
+<script src="js/lib/angular-animate/angular-animate.js"></script>
+<script src="js/lib/angular-aria/angular-aria.js"></script>
+<script src="js/lib/angular-messages/angular-messages.js"></script>
+
+<script src="js/lib/angular-material/angular-material.js"></script>
+
+<script src="js/todo.js"></script>
+<!-- endbuild -->
+</html>
