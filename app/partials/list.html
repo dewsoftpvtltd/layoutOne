@@ -1,0 +1,15 @@
+
+<md-input-container><input type="text" ng-model="search" class="search-query" id="projects_search"
+       placeholder="Search"></md-input-container>
+<a ng-href="#/new"> <md-icon md-svg-src="images/icons/plus.svg" style="width: 25px;"></md-icon></a>
+<md-list>
+  <md-list-item class="md-2-line" ng-repeat="project in projects | filter:search | orderBy:'name'" md-whiteframe="1">
+    <div class="md-list-item-text" layout flex layout-align="space-around">
+      <div><h3>{{project.name}}</h3></div>
+
+
+      <div><p>{{project.drink}}</p></div>
+      <div><p> <span flex="33"></span>  <a ng-href="#/edit/{{project.id}}" aria-label="drinks"> <md-icon md-svg-src="images/icons/edit.svg" style="width: 15px;"></md-icon></a></p></div>
+    </div>
+  </md-list-item>
+</md-list>

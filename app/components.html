@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html ng-app="componentsApp">
+<head>
+<title>Layout Two</title>
+<meta name="viewport" content="initial-scale=1, maximum-scale=1" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.4/css/bootstrap.css">
+<!--build:css css/main.min.css -->
+<link rel="stylesheet" type="text/css" href="css/print.css">
+<link rel="stylesheet" href="css/angular-material.css">
+
+<!-- endbuild -->
+</head>
+  <body layout="row" layout-align="center center">
+
+<tabs>
+      <pane title="Localization">
+        <span>Date: {{ '2012-04-01' | date:'fullDate' }}</span><br>
+        <span>Currency: {{ 123456 | currency }}</span><br>
+        <span>Number: {{ 98765.4321 | number }}</span><br>
+      </pane>
+      <pane title="Pluralization">
+        <div ng-controller="BeerCounter">
+          <div ng-repeat="beerCount in beers">
+            <ng-pluralize count="beerCount" when="beerForms"></ng-pluralize>
+          </div>
+        </div>
+      </pane>
+    </tabs>
+
+</body>
+<!--build:js js/main.min.js -->
+
+<script src="js/lib/angular/angular.js"></script>
+<script src="js/lib/angular-animate/angular-animate.js"></script>
+<script src="js/lib/angular-aria/angular-aria.js"></script>
+<script src="js/lib/angular-messages/angular-messages.js"></script>
+
+<script src="js/lib/angular-material/angular-material.js"></script>
+
+ <script src="js/components.js"></script>
+    <script src="js/compApp.js"></script>
+<!-- endbuild -->
+</html>

@@ -1,0 +1,21 @@
+<form name="myForm">
+  <div  ng-class="{error: myForm.name.$invalid && !myForm.name.$pristine}" layout="column" md-whiteframe="1" layout-padding>
+   <md-input-container> <label>Name</label>
+    <input type="text" name="name" ng-model="project.name" required>
+    <span ng-show="myForm.name.$error.required && !myForm.name.$pristine" class="help-inline">
+        Required {{myForm.name.$pristine}}</span>
+        </md-input-container>
+
+
+<md-input-container>
+  <label>Drink</label>
+  <textarea name="drink" ng-model="project.drink"></textarea>
+</md-input-container>
+  </div> <br>
+  <div>
+    <md-button ng-click="cancel()" class="md-primary md-raised">Cancel</md-button>
+    <md-button ng-click="save()" ng-disabled="myForm.$invalid" class="md-accent md-raised">Save</md-button>
+    <md-button ng-click="destroy()" ng-show="project.id" class="md-warn md-raised">Delete</md-button>
+
+  </div>
+</form>

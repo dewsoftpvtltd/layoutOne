@@ -3,6 +3,7 @@
 <head>
 <title>Layout Two</title>
 <meta name="viewport" content="initial-scale=1, maximum-scale=1" />
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
 <!--build:css css/main.min.css -->
 <link rel="stylesheet" type="text/css" href="css/todo.css">
@@ -13,7 +14,7 @@
   <body layout="column" layout-fill>
 <md-toolbar>
     <div class="md-toolbar-tools">
-      <span>Todo App</span>
+      <span>JavaScript Projects</span>
       <!-- fill up the space between left and right area -->
       <span flex></span>
       <md-button>
@@ -21,44 +22,11 @@
       </md-button>
     </div>
   </md-toolbar>
+<h2>JavaScript Projects</h2>
+<div layout layout-align="center start">
 
-    <div ng-controller="TodoListController as todoList" layout-gt-sm="row" layout-sm="column" layout-xs="column" layout-align="center start" layout-align-xs="start center" layout-align-sm="start center">
-    <div layout="row" layout-align="start start" layout-sm="column" layout-xs="column" >
-  <div md-whiteframe="1" layout-margin id="addtodo">
-      <form novalidate ng-submit="todoList.addTodo()" name="userForm">
-       <md-input-container>
-        <input type="text" ng-model="todoList.todoText"  size="30"
-               placeholder="Add new todo here" name="todo" required md-maxlength="20" minlength="3">
-        <div ng-messages="userForm.todo.$error" ng-messages="userForm.todo.$dirty">
-            <div ng-message="required">This is required!</div>
-            <div ng-message="md-maxlength">That's too long!</div>
-            <div ng-message="minlength">That's too short!</div>
-        </div>
-        <md-button type="submit" value="add" class="md-raised md-accent">Add</md-button>
-        </md-input-container>
-      </form></div>
-    <div>
-      <md-list md-whiteframe="1" layout-margin>
-        <div layout layout-align="end end">
-          <span flex="85" layout-padding>
-            <small>{{todoList.remaining()}} of {{todoList.todos.length}} remaining</small>
-          </span>
-          <md-icon md-svg-src="images/icons/archive.svg" ng-click="todoList.archive()">
-              <md-tooltip>
-              Archive todo
-              </md-tooltip>
-          </md-icon>
-        </div>
-          <md-list-item class="md-2-line" ng-repeat="todo in todoList.todos" >
-            <md-checkbox ng-model="todo.done"></md-checkbox>
-            <div class="md-list-item-text done-{{todo.done}}">
-              <h3>{{todo.text| limitTo:20}}</h3>
-            </div>
-          </md-list-item>
-        </md-list>
-        </div>
-      </div>
-    </div>
+    <div ng-view></div>
+</div>
 
 </body>
 <!--build:js js/main.min.js -->
@@ -67,6 +35,10 @@
 <script src="js/lib/angular-animate/angular-animate.js"></script>
 <script src="js/lib/angular-aria/angular-aria.js"></script>
 <script src="js/lib/angular-messages/angular-messages.js"></script>
+<script src="js/lib/lodash/lodash.js"></script>
+<script src="js/lib/angular-route/angular-route.js"></script>
+<script src="js/lib/restangular/dist/restangular.js"></script>
+
 
 <script src="js/lib/angular-material/angular-material.js"></script>
 
